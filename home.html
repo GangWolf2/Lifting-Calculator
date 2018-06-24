@@ -1,0 +1,111 @@
+<ion-header>
+
+  <ion-navbar color = 'dark'>
+    <ion-title text-center>
+      WeightFinder
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <ion-toolbar> 
+    <ion-segment>
+  
+      <ion-segment-button value = "calculator">
+        <ion-icon name = "calculator"></ion-icon>
+      </ion-segment-button>
+  
+      <ion-segment-button value = "magnify" (click) = "loadMaxFindPage()">
+          <ion-icon name = "search"></ion-icon>
+      </ion-segment-button>
+      
+      <ion-segment-button (click)= "loadMaxPercentagesPage()">
+        <ion-title text-color = "primary"> % </ion-title>
+      </ion-segment-button>
+    
+    </ion-segment>
+  
+  </ion-toolbar>
+ 
+<ion-item> 
+  <ion-label text-center stacked> Enter Weight</ion-label>
+  <ion-input text-center type = "number"></ion-input>
+</ion-item>
+
+<ion-grid>
+  <ion-row>
+      <ion-col>
+       <ion-item>
+           <ion-label> lb </ion-label>
+           <ion-checkbox [(ngModel)] = "pound"></ion-checkbox>
+           </ion-item>
+       </ion-col>
+
+       <ion-col>
+          <ion-item>
+           <ion-label> kg </ion-label>
+           <ion-checkbox [(ngModel)] = "kilogram"></ion-checkbox>
+          </ion-item>
+       </ion-col>
+  </ion-row>
+ </ion-grid>
+  <h2 text-center>
+    Choose Bar Type
+  </h2>
+
+  <ion-slides> 
+
+    <ion-slide> 
+     <img src = "https://imgur.com/CdaOvGq.png"> 
+     <ion-label> Olympic Bar (45lbs/22kg)</ion-label>
+     <ion-checkbox [(ngModel)] = "olymp_bar"></ion-checkbox>
+    </ion-slide>
+
+    <ion-slide>
+      <img src = "https://imgur.com/zZJdsOI.png">
+      <ion-label> Standard/Training Bar (15lbs) </ion-label>
+      <ion-checkbox [(ngModel)] = "train_bar"></ion-checkbox>
+    </ion-slide>
+
+    <ion-slide>
+        <img src = "https://imgur.com/vA77495.png">
+        <ion-label> Hex/Trap Bar (45lbs) </ion-label>
+        <ion-checkbox [(ngModel)] = "hex_bar"></ion-checkbox>
+      </ion-slide>
+  
+    <ion-slide>
+          <img src = "https://imgur.com/u7Pl200.png">
+          <ion-label> EZ Curl (15lbs) </ion-label>
+          <ion-checkbox [(ngModel)] = "ez_curl_bar"></ion-checkbox>
+        </ion-slide>
+   
+     <ion-slide>
+        <img src = "https://imgur.com/HPupOjv.png">
+        <ion-label> Yoke Bar (65lbs) </ion-label>
+        <ion-checkbox [(ngModel)] = "yoke_bar"></ion-checkbox>
+      </ion-slide>
+
+
+    <ion-slide>
+      <img src = "https://imgur.com/2RgEPaO.png">
+      <ion-label> Swiss Bar (35lbs) </ion-label>
+      <ion-checkbox [(ngModel)] = "swiss_bar"></ion-checkbox>
+    </ion-slide>
+ </ion-slides> 
+
+ <ion-item>
+   <ion-label text-center> Or, enter weight here: </ion-label>
+   <ion-input type = "number" placeholder> 45 </ion-input>
+ </ion-item>
+
+ <h2 text-center> Plates Available (Optional)</h2>
+
+ 
+<ion-segment>
+  <ion-segment-button (click) = "loadResultsPage()" >Calculate</ion-segment-button>
+</ion-segment>
+
+ 
+</ion-content>
