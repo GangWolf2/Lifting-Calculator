@@ -42,6 +42,7 @@
     Choose Bar Type
   </h2>
 
+  <div class "slide-group">
   <ion-slides> 
 
     <ion-slide> 
@@ -63,9 +64,9 @@
       </ion-slide>
   
     <ion-slide>
-          <img src = "https://imgur.com/u7Pl200.png">
-          <ion-label> EZ Curl (15lbs) </ion-label>
-          <ion-checkbox [(ngModel)] = "ez_curl_bar" name = "ez_curl_bar" value="15"></ion-checkbox>
+        <img src = "https://imgur.com/u7Pl200.png">
+        <ion-label> EZ Curl (15lbs) </ion-label>
+        <ion-checkbox [(ngModel)] = "ez_curl_bar" name = "ez_curl_bar" value="15"></ion-checkbox>
         </ion-slide>
    
      <ion-slide>
@@ -79,7 +80,8 @@
       <ion-label> Swiss Bar (35lbs) </ion-label>
       <ion-checkbox [(ngModel)] = "swiss_bar" name = "swiss_bar" value = "35"></ion-checkbox>
     </ion-slide>
- </ion-slides> 
+   </ion-slides> 
+  </div>
 
  <ion-item>
    <ion-label text-center> Or, enter weight here: </ion-label>
