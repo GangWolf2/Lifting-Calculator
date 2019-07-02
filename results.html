@@ -6,24 +6,36 @@
 -->
 <ion-header>
 
+    <ion-buttons start>
+      <ion-button menuToggle>
+        <ion-icon name ="menu"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
     <ion-navbar color = 'dark'>
       <ion-title text-center>
-        WeightFinder
+        LiftAssist
       </ion-title>
     </ion-navbar>
-  
- 
   </ion-header>
 
 
 <ion-content padding>
 
-  <h1> Results </h1>
+  <h1> WeightResults </h1>
 
-  <ion-list>
-    <ion-item>
-      
-    </ion-item>
-  </ion-list>
+  
+    <h2 name = "totalWeight">Total Weight: </h2> <!--need to get .ts variable in here somehow-->
+    <p>On each side, place: </p>
 
+    
+    <ion-list>
+      <ion-item *ngFor = "let weight of weights">
+        <ion-label>{{weight.load}}: {{weight.amount}}</ion-label>
+      </ion-item>
+    </ion-list>
+  
+
+  <ion-button (click) = "loadWeightFinderPage()">Calculate Again</ion-button> <!--button should allow you to repeat plateCalculator action with new values. basically onClick(loadWeightFinderPage)-->
+  <ion-button></ion-button> <!--button could redirect you to 1RM or Percentages, possibly new page to keep track of maxes -->
 </ion-content>
