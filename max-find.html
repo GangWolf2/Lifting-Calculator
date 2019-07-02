@@ -25,17 +25,17 @@
 
     <ion-item>
       <ion-label text-center stacked> Enter Weight </ion-label>
-      <ion-input text-center type= "number"></ion-input>
+      <ion-input text-center type= "number" name = "enteredWeight"></ion-input>
     </ion-item>
 
     <ion-item>
         <ion-label text-center stacked> Enter Number of Reps </ion-label>
-        <ion-input text-center type= "number"></ion-input>
+        <ion-input text-center type= "number" name = "numReps"></ion-input>
     </ion-item>
     
    <ion-row>
      <ion-col text-center>
-       <button ion-button small> Calculate </button>
+       <button ion-button small (click)> Calculate </button>
      </ion-col>
    </ion-row>
 
