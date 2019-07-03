@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <ion-header>
+    <script src = 'maxfind-results.ts'> </script> <!--script tages are how I run functions without requiring a click or tap-->
+        <ion-buttons start>
+            <button ion-button menuToggle>
+                <ion-icon name = "menu"></ion-icon>
+            </button>
+        </ion-buttons>
+                        
+        <ion-navbar color = 'dark'>
+            <ion-title text-center>
+                WeightFinder
+            </ion-title>
+        </ion-navbar>
+    </ion-header>   
+
+    <ion-content>
+        <h2 id = "oneRep">Your 1RM</h2>
+
+        <p [(ngModel)]></p>
+
+        <ion-button (click) = "loadMaxPercentagesPage()"></ion-button>
+
+    </ion-content>
+
+</html>
