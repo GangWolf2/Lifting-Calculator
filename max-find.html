@@ -36,13 +36,15 @@
 
     <ion-button small (click) = "calculateMax(enteredWeight, numReps)"> Calculate </ion-button>
 
-    <h2 display = "none" id = "your1RM">Your 1RM</h2>
-    <p [(ngControl)] = "oneRepMax" display = "none" id = "oneRepMax">{{oneRepMax}}</p>
+    <div class = "results" id = "results">
+      <h2> Your 1RM </h2>
+      <p [(ngControl)] = "oneRepMax">{{oneRepMax}}</p>
 
-    <ion-list display = "none" id = "btnList"> 
+    <ion-list  id = "btnList"> <!--remember that you need id tag to control display, using getElementById() method-->
       <ion-button (click) = "loadPercentageResultsPage()"> Percentages</ion-button>
       <ion-button (click) = "loadWeightFinderPage()"> Lift It</ion-button>
     </ion-list>
+    </div>
     
    
 
