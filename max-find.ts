@@ -41,6 +41,10 @@ export class MaxFindPage {
     //if (x.style.display == "none"){
       //x.style.display = block }
     //else{x.style.display == "none"}
+    
+    //var y = document.getElementbyId("btnList");
+    //if (y.style.display == "none" || y.style.display == "block"){
+    // y.style.display == "inline"; }
   }
 
   loadPercentageResultsPage(){
