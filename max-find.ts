@@ -37,7 +37,7 @@ export class MaxFindPage {
   }
 
   changeDisplay(){
-    //var x = document.getElementbyId("idname");
+   //var x = document.getElementbyId("results");
     //if (x.style.display == "none"){
       //x.style.display = block }
     //else{x.style.display == "none"}
