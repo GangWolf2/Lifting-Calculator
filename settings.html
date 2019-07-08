@@ -1,0 +1,106 @@
+<ion-header>
+
+    <ion-buttons start>
+      <ion-button menuToggle>
+        <ion-icon name ="menu"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-navbar color = 'dark'>
+      <ion-title text-center>
+        LiftAssist
+      </ion-title>
+    </ion-navbar>
+
+  </ion-header>
+
+  <ion-content padding>
+    <ul> <!--main settings list-->
+     <ion-list-header>Settings</ion-list-header>
+
+      <li> <!--list item which allows for creation of a sublist, new required each time I want to make new sublist(Display, Calculations, ...)-->
+        <ion-button class = "collapsible">Display</ion-button>
+
+        <ul display = "none" class = "content"> <!--list for changeable options-->
+            <li> <!--area for creating options for users to change-->
+                <ion-button class = "collapsible">Colors</ion-button>
+                    <select>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+            </li>
+
+            <li> <!--another option that users can change-->
+                <ion-button class = "collapsible">Language</ion-button>
+                    <select>
+                        <option value = "english" selected>English</option>
+                        <option value = "spanish">Spanish</option>
+                        <option value = "german"> German</option>
+                        <option value = "french"> French</option>
+                        <option value = "italian">Italian</option>
+                    </select>
+            </li>
+        </ul>
+      </li>
+
+      <li>
+        <ion-button class = "collapsible">Calculations</ion-button>
+
+          <ul display = "none" class = "content">
+            <li>
+                <ion-button class = "collapsible">Rounding</ion-button>
+                    <select>
+                        <option value = true>Round Up</option>
+                        <option value = false>Round Down</option>
+                    </select>
+                    
+            </li>
+          </ul>
+      </li>
+
+    </ul>
+
+  </ion-content>
+    
+    
+    
+    
+    <!--
+        <ion-list>
+        <ion-list-header>Settings</ion-list-header>
+
+        <ion-item>
+            <ion-button class = "collapsible">Display</ion-button>
+                <ul display = "none" class = "content">
+                    <ion-button display = "none" class = "content"> </ion-button>    
+                </ul>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Rounding</ion-label>
+            <ion-note>Determines whether weight should be rounded up or down when calculating 
+                      percentages of a lifting max, to ensure the weight could realistically be put on
+                      a bar. (Only rounded when 'Round' button is pressed)
+            </ion-note>
+
+            <ion-select>
+                <ion-select-option value = "up">Round Up</ion-select-option>
+                <ion-select-option value = "down">Round Down</ion-select-option>
+            </ion-select>
+        </ion-item>
+
+        
+
+
+    </ion-list>
+    -->
+    
+
+
+
+
+
+  
