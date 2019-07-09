@@ -1,0 +1,48 @@
+<ion-header>
+
+    <ion-buttons start>
+        <button ion-button menuToggle>
+          <ion-icon name = "menu"></ion-icon>
+        </button>
+    </ion-buttons>
+
+    <ion-navbar color = 'dark'>
+        <ion-title text-center>
+          WeightFinder
+        </ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-item>
+        <ion-label text-center stacked> Enter Your One Rep Max </ion-label>
+        <ion-input text-center name = "orm" type= "number" [(ngModel)] = "oneRepMax" (input) = setORM(orm)></ion-input>
+        <ion-button (click) = 'changeDisplay()'>Calculate</ion-button>
+    </ion-item>
+
+    <div id = "results">
+        <ion-list>
+          <ion-list-header>Max Percentages</ion-list-header>
+            <ion-item *ngFor= "let percent of percentages">
+                <ion-label> {{percent.value}}: {{percent.multiplier}}</ion-label>
+                <ion-button (click) = "checkUpDown(percent.multiplier)">Round</ion-button>
+                <p id = "round" display = "none">{{rounded}}</p>
+            </ion-item>
+        </ion-list>
+    </div>
+<!--
+<ion-row>
+        <ion-col text-center>
+          <button ion-button (click) = "loadPercentageResultsPage()">Calculate</button>
+        </ion-col>
+    </ion-row>
+-->
+    
+
+
+
+</ion-content>
+

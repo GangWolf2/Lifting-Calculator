@@ -1,0 +1,43 @@
+<ion-header>
+
+    <ion-buttons start>
+        <button ion-button menuToggle>
+          <ion-icon name = "menu"></ion-icon>
+        </button>
+    </ion-buttons>
+
+    <ion-navbar color = 'dark'>
+      <ion-title text-center>
+        WeightFinder
+      </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  
+    <ion-list>
+        <ion-item>
+            <ion-label text-center stacked> Enter Weight </ion-label>
+            <ion-input id = "enteredWeight" text-center type= "number" name = "enteredWeight" [(ngModel)] = "userWeight" ></ion-input>
+          </ion-item>
+      
+          <ion-item>
+              <ion-label text-center stacked> Enter Number of Reps </ion-label>
+              <ion-input text-center type= "number" name = "numReps" [(ngModel)] = "reps"></ion-input>
+          </ion-item>      
+    </ion-list>
+  
+    <ion-button type = "submit" (click) = "calculateMax(enteredWeight, numReps) + changeDisplay()"> Calculate </ion-button>
+  
+  
+    <div class = "results" id = "results" display = "none">
+      <h2> Your 1RM </h2>
+      <p [(ngControl)] = "oneRepMax">{{oneRepMax}}</p>
+
+    <ion-list  id = "btnList" display = "none"> <!--remember that you need id tag to control display, using getElementById() method-->
+      <ion-button (click) = "loadPercentageResultsPage()"> Percentages</ion-button>
+      <ion-button (click) = "loadWeightFinderPage()"> Lift It</ion-button>
+    </ion-list>
+    </div>
+
+</ion-content>

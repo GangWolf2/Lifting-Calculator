@@ -1,0 +1,29 @@
+<ion-header>
+
+    <ion-buttons start>
+      <ion-button menuToggle>
+        <ion-icon name ="menu"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-navbar color = 'dark'>
+      <ion-title text-center>
+        LiftAssist
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+
+<ion-content padding>
+
+  <h2>Total Weight: </h2>
+  <p>On each side, place: </p>
+
+  <ion-list>
+    <ion-item *ngFor = "let weight of weights">
+      <ion-label>{{weight.load}}: {{weight.amount}}</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-button (click) = "loadWeightFinderPage()">Find Another Weight</ion-button>
+
+</ion-content>
