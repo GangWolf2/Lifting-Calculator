@@ -1,41 +1,51 @@
 <ion-header>
-  <!--script src = weight-finder.ts-->
-  <ion-buttons start>
-    <button ion-button menuToggle>
-      <ion-icon name = "menu"></ion-icon>
-    </button>
-  </ion-buttons>
-
-  <ion-navbar color = 'dark'>
+    <ion-button start menuToggle>
+        <ion-icon name = "menu"></ion-icon>
+    </ion-button>
     <ion-title text-center>
-      WeightFinder
-    </ion-title>
-  </ion-navbar>
-
+        WeightFinder
+    </ion-title>     
 </ion-header>
 
 <ion-content padding>
 
   <ion-item>
     <ion-label text-center stacked>Enter Weight</ion-label>
-    <ion-input text-center type = "number" name = "userweight" [(ngModel)] = "userWeight" (input) = "setUserWeight(userweight)"></ion-input>
+    <ion-input text-center type = "number" name = "userweight" [(ngModel)] = "userWeight"></ion-input>
   </ion-item>
 
   <h2 text-center>Choose Bar Type</h2>
 
   <div class = "slide-group">
-
-      <ion-slides>
-        <ion-slide *ngFor = "let bar of bartypes">
-          <ion-label>{{bar.name}}</ion-label>
-          <ion-img [src] = "bar.img"></ion-img>
-          <ion-checkbox name = "selectedBar" (change) = "setBarsFalse(bar)" [(ngModel)] = "bartype[bar]" [checked] = "bar.isChecked"></ion-checkbox>
+    <!--
+      <ion-list>
+      <ion-list-header text-center>Choose Bar Type</ion-list-header>
+      <ion-item *ngFor= "let bar of bartype"> ngFor is causing list/slides not to appear, spelled array wrong you tard
+        <ion-label>{{bar.name}}</ion-label>
+        <img [src] = "bar.img">
+        <ion-checkbox name = "selectedBar" (change) = "setBarsFalse(bar)" [(ngModel)] = "bartype[bar]" [checked] = "bar.isChecked"></ion-checkbox>
+      </ion-item>
+    </ion-list>
+     -->
+      <ion-slides [options]="slideOpts">
+        <ion-slide *ngFor = "let bar of bartype">
+          <ion-card id = "imgCard">
+            <ion-card-header>
+              <ion-card-title>{{bar.name}} ({{bar.weight}} lbs)</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+                <ion-img [src] = "bar.img"></ion-img>
+                <ion-checkbox name = "selectedBar" (change) = "setBarsFalse(bar)" [(ngModel)] = "bartype[bar]" [checked] = "bar.isChecked"></ion-checkbox>
+            </ion-card-content>
+          </ion-card>
+           
+          
         </ion-slide>
-      </ion-slides>
+      </ion-slides>   
   </div>
-
+  
   <ion-segment>
-    <ion-segment-button (click) = "loadResultsPage()">Calculate</ion-segment-button>
+    <ion-segment-button (click) = "loadWeightFinderResultsPage()">Calculate</ion-segment-button>
   </ion-segment>
   
 

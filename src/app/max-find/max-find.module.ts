@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { MaxFindPage } from './max-find.page';
 
+/*
 const routes: Routes = [
   {
     path: '',
@@ -14,13 +15,14 @@ const routes: Routes = [
     outlet: 'orm'
   }
 ];
+*/
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild([{ path: '', component: MaxFindPage}])
   ],
   declarations: [MaxFindPage]
 })

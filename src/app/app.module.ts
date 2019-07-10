@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { TabsPage } from './tabs/tabs.page';
 import { TabsPageModule } from './tabs/tabs.module';
+import { TabsPageRoutingModule } from './tabs/tabs.router.module';
 
 import { MaxFindPage } from './max-find/max-find.page';
 import { MaxFindPageModule } from './max-find/max-find.module';
@@ -46,6 +47,7 @@ import {SettingsPageModule} from './settings/settings.module';
     IonicModule.forRoot(), 
     AppRoutingModule, 
     TabsPageModule,
+    TabsPageRoutingModule,
     MaxFindPageModule,
     MaxPercentagesPageModule,
     MaxpercentagesResultsPageModule,

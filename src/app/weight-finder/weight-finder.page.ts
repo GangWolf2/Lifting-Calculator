@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, NavParams} from '@ionic/angular';
+import { NavController} from '@ionic/angular';
+import { Router, NavigationExtras } from '@angular/router';
 import { WeightFinderResultsPage} from '../weight-finder-results/weight-finder-results.page';
 
 @Component({
@@ -11,8 +12,8 @@ export class WeightFinderPage implements OnInit {
 
   userWeight: number;
   bar;
-  constructor(public navCtrl: NavController, public navParams: NavParams) { 
-    this.userWeight = this.navParams.get("userWeight"); //used to set weight if this page is navigated from another page
+  constructor(public navCtrl: NavController, private router: Router) { 
+    //this.userWeight = this.navParams.get("userWeight"); //used to set weight if this page is navigated from another page
   }
 
   setUserWeight(userWeight){//used if starting on this page, or changing input after being navigated to this page
@@ -49,10 +50,19 @@ export class WeightFinderPage implements OnInit {
   }
 
   loadWeightFinderResultsPage(){
+    let navigationExtras:NavigationExtras = {
+      state: {
+        userWeight: this.userWeight,
+        bar: this.bar
+      }
+    };
+    this.router.navigate(['weight-finder-results'], navigationExtras);
+    /*
     this.navCtrl.navigateForward(['./weight-finder-results', {
       userWeight: this.userWeight,
       bar: this.bar
     }]);
+    */
   }
 
 

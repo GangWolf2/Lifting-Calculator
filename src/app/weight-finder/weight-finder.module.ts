@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { WeightFinderPage } from './weight-finder.page';
 
+/*
 const routes: Routes = [
   {
     path: '',
@@ -14,15 +15,15 @@ const routes: Routes = [
     outlet: 'wf'
   }
 ];
+*/
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild([{ path: '', component: WeightFinderPage}])
   ],
-  exports: [RouterModule],
   declarations: [WeightFinderPage]
 })
 export class WeightFinderPageModule {}

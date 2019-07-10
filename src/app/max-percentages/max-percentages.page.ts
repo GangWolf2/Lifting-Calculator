@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, NavParams } from '@ionic/angular';
+import { NavController} from '@ionic/angular';
 
 @Component({
   selector: 'app-max-percentages',
@@ -11,9 +11,9 @@ export class MaxPercentagesPage implements OnInit {
   rounded: number;
   roundUp: boolean = true;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) { 
-    this.oneRepMax = this.navParams.get("oneRepMax");
-    this.roundUp = this.navParams.get("rounding"); //will most likely need to create a Storage, static variable not resetting when closing app
+  constructor(public navCtrl: NavController) { 
+    //this.oneRepMax = this.navParams.get("oneRepMax");
+    //this.roundUp = this.navParams.get("rounding"); //will most likely need to create a Storage, static variable not resetting when closing app
   }
 
   setORM(value: number){

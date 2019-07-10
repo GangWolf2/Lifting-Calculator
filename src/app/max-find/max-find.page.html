@@ -1,16 +1,12 @@
 <ion-header>
 
-    <ion-buttons start>
-        <button ion-button menuToggle>
-          <ion-icon name = "menu"></ion-icon>
-        </button>
-    </ion-buttons>
-
-    <ion-navbar color = 'dark'>
-      <ion-title text-center>
+    <ion-button start menuToggle>
+        <ion-icon name = "menu"></ion-icon>
+    </ion-button>
+    <ion-title text-center>
         WeightFinder
-      </ion-title>
-    </ion-navbar>
+    </ion-title>
+    
 </ion-header>
 
 <ion-content padding>
@@ -32,7 +28,7 @@
   
     <div class = "results" id = "results" display = "none">
       <h2> Your 1RM </h2>
-      <p [(ngControl)] = "oneRepMax">{{oneRepMax}}</p>
+      <p>{{oneRepMax}}</p>
 
     <ion-list  id = "btnList" display = "none"> <!--remember that you need id tag to control display, using getElementById() method-->
       <ion-button (click) = "loadPercentageResultsPage()"> Percentages</ion-button>

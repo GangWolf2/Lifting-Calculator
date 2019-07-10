@@ -5,42 +5,15 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { TabsPage } from './tabs.page';
+import { TabsPageRoutingModule } from './tabs.router.module';
 
-
-const routes: Routes = [
-  {
-    path: 'tabs',
-    component: TabsPage,
-    children: [
-      {
-        path: 'max-find',
-        loadChildren: '../max-find/max-find.module#MaxFindPageModule'
-      },
-      {
-        path: 'weight-find',
-        //outlet: 'wf',
-        loadChildren: '../weight-finder/weight-finder.module#WeightFinderPageModule'
-      },
-      {
-        path: 'max-percentage',
-        //outlet: 'mp',
-        loadChildren:'../max-percentages/max-percentages.module#MaxPercentagesPageModule'
-      }
-    ]
-  },
-  {
-      path: '',
-      redirectTo: '/tabs/weight-find',
-      pathMatch: 'full'
-  }
-];
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild(routes)
+    TabsPageRoutingModule
   ],
   //exports: [RouterModule],
   declarations: [TabsPage]

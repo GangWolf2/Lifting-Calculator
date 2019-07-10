@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, NavParams } from '@ionic/angular';
+import { NavController} from '@ionic/angular';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-weight-finder-results',
@@ -10,9 +11,13 @@ export class WeightFinderResultsPage implements OnInit {
   userWeight: number;
   barWeight: number;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) { 
-    this.userWeight = this.navParams.get("userWeight");
-    this.barWeight = this.navParams.get("bar");
+  constructor(private route: ActivatedRoute, private router: Router) { 
+    this.route.queryParams.subscribe(params => {
+      if(this.router.getCurrentNavigation().extras.state){
+        this.userWeight = this.router.getCurrentNavigation().extras.state.userWeight;
+        this.barWeight = this.router.getCurrentNavigation().extras.state.bar;
+      }
+    });
   }
 
   ngOnInit() {
@@ -124,9 +129,6 @@ export class WeightFinderResultsPage implements OnInit {
   }
 
   
-  loadWeightFinderPage(){
-    this.navCtrl.navigateBack('./weight-finder');
-  }
 
 }
 

@@ -7,19 +7,20 @@ import { IonicModule } from '@ionic/angular';
 
 import { MaxPercentagesPage } from './max-percentages.page';
 
+/*
 const routes: Routes = [
   {
     path: '',
     component: MaxPercentagesPage
   }
 ];
-
+*/
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild([{ path: '', component: MaxPercentagesPage }])
   ],
   declarations: [MaxPercentagesPage]
 })
