@@ -1,0 +1,38 @@
+.text{
+    text-align: center;
+}
+#button1{
+    display: block;
+    padding: 5px;
+    height: 50px;
+}
+#oneRepResult{
+    text-align: center;
+    font-size: 48px;
+}
+.button2{
+    height: 50px;
+    width: 150px;
+    padding: 5px 5px;
+}
+.button3{
+    padding: 5px 5px;
+    height: 50px;
+    width: 160px;
+}
+.content{
+    --ion-background-color: white
+    ;
+}
+.header{
+    background-color: darkgreen;
+}
+#button{
+    background-color: black;
+    color: black;
+    display: block;
+}
+#titletext{
+    color: darkgreen;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}

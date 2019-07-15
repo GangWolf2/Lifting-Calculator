@@ -1,0 +1,23 @@
+<ion-header>
+    <ion-button start menuToggle>
+        <ion-icon name = "menu"></ion-icon>
+    </ion-button>
+    <ion-title text-center>
+        WeightFinder
+    </ion-title>     
+</ion-header>
+
+<ion-content padding>
+
+  <h2>Total Weight: </h2>
+  <p>On each side, place: </p>
+
+  <ion-list>
+    <ion-item *ngFor = "let weight of weights">
+      <ion-label>{{weight.load}}: {{weight.amount}}</ion-label>
+    </ion-item>
+  </ion-list>
+
+  
+
+</ion-content>

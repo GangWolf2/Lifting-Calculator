@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Weights Needed</title>
+</head>
+
+<body>
+<script>
+//var weight=338
+//var bar=45
+//var value = 338
+function round (wvalue) {
+    var tmp_calc = 0
+
+    tmp_calc = (wvalue + 9) / 10 | 0 ; // round up to nearest 10
+    var resultu = 10 * tmp_calc ;
+
+// round up to nearest 5
+    tmp_calc = (wvalue + 4) / 5 | 0 ;
+    var resultd= 5 * tmp_calc ;
+
+    var diffu= resultu - wvalue ;
+    var diffd= wvalue - resultd ;
+
+    if ( diffu == diffd ) {
+        return wvalue
+    } 
+    else if ( diffu < diffd ) {
+        return resultu
+    } 
+    else {
+        return resultd
+    }
+}
+
+function calc_weights(){
+//var weight = 340
+
+//var bar = 45
+    var weight = document.forms["weight_form"]["weightEntry"].value
+    var bar = document.forms["weight_form"]["bar_select"].value
+
+    weight = parseInt(weight,0)// convert text to integer
+
+    document.write("Weight amount entered: " + weight + "<br>")
+    document.write("Bar Weight: " + bar + "<br>")
+    document.write("<br>")
+    document.write("<table border=\"1\">")
+    document.write("<tr>")
+    document.write("<th>%</th>")
+    document.write("<th>Weight</th>")
+    document.write("<th>45's</th>")
+    document.write("<th>35's</th>")
+    document.write("<th>25's</th>")
+    document.write("<th>10's</th>")
+    document.write("<th>5's</th>")
+    document.write("<th>2.5's</th>")
+    document.write("</tr>")
+
+    var weight_entered = weight
+
+    for (w=100 ; w > 55 ; w = w - 5){
+        pweight = w / 100 // take off a percentage of the weight entered 
+        weight = weight_entered * pweight
+        var tmp_weight=round(weight)
+
+
+
+    if ( weight != tmp_weight ) {
+        weight=tmp_weight
+//document.write("Rounding Up from " + weight + " to " + tmp_weight + "<br>")
+        }
+//document.write("Weight: >> " + weight + " << consits of" + "<br>")
+//document.write("Bar: " + bar + "<br>" )
+
+    new_weight = weight - bar
+
+    forty_5s= new_weight / 45 | 0
+
+    if (forty_5s % 2 === 0){
+        new_weight=new_weight - (45 * forty_5s ) 
+    }
+
+    else{
+        forty_5s= forty_5s - 1
+        new_weight= new_weight - (45 * forty_5s ) 
+    }
+
+//document.write("Forty Five's: " + forty_5s )
+
+//document.write("<br>")
+
+
+
+// 35
+
+thirty_5s = new_weight / 35 | 0
+
+if (thirty_5s % 2 === 0)
+
+{
+
+new_weight=new_weight - (35 * thirty_5s )
+
+}
+
+else
+
+{
+
+thirty_5s= thirty_5s - 1
+
+new_weight= new_weight - (35 * thirty_5s )
+
+}
+
+//document.write("Thirty Five's: " + thirty_5s )
+
+//document.write("<br>")
+
+
+
+// 25 
+
+twenty_5s= new_weight / 25 | 0
+
+if (twenty_5s % 2 === 0)
+
+{
+
+new_weight=new_weight - (25 * twenty_5s )
+
+}
+
+else
+
+{
+
+twenty_5s= twenty_5s - 1
+
+new_weight= new_weight - (25 * twenty_5s )
+
+}
+
+//document.write("Twenty Five's: " + twenty_5s )
+
+//document.write("<br>")
+
+
+
+// 10
+
+tens = new_weight / 10 | 0
+
+if (tens % 2 === 0) 
+
+{
+
+new_weight=new_weight - (10 * tens )
+
+}
+
+else
+
+{
+
+tens= tens - 1
+
+new_weight= new_weight - (10 * tens ) 
+
+}
+
+//document.write("Ten's: " + tens )
+
+//document.write("<br>")
+
+
+
+// 5
+
+five_5s = new_weight / 5 | 0
+
+if (five_5s % 2 === 0)
+
+{
+
+new_weight=new_weight - (5 * five_5s ) 
+
+}
+
+else
+
+{
+
+five_5s= five_5s - 1
+
+new_weight= new_weight - (5 * five_5s ) 
+
+}
+
+//document.write("Five's: " + five_5s )
+
+//document.write("<br>")
+
+
+
+// 2.5
+
+two_n_halfs = new_weight / 2.5 
+
+if (two_n_halfs % 2 === 0)
+
+{
+
+new_weight=new_weight - (2.5 * two_n_halfs )
+
+}
+
+else
+
+{
+
+two_n_halfs= two_n_halfs - 1
+
+new_weight= new_weight - (2.5 * two_n_halfs )
+
+}
+
+//document.write("Two in Half's: " + two_n_halfs )
+
+//document.write("<br>")
+
+
+
+if(forty_5s == 0 && thirty_5s == 0 && twenty_5s == 0 && tens == 0 && five_5s == 0 && two_n_halfs == 0)
+
+{
+
+break
+
+}
+
+
+
+
+
+document.write("<tr>")
+
+document.write("<td>" + w + "</td>")
+
+document.write("<td>" + weight + "</td>")
+
+document.write("<td>" + forty_5s + "</td>")
+
+document.write("<td>" + thirty_5s + "</td>")
+
+document.write("<td>" + twenty_5s + "</td>")
+
+document.write("<td>" + tens + "</td>")
+
+document.write("<td>" + five_5s + "</td>")
+
+document.write("<td>" + two_n_halfs + "</td>")
+
+document.write("</tr>")
+
+
+
+}
+
+document.write("</table>")
+
+
+
+document.write("<br>" + "<br>" + "<font color=\"red\">" + "Note" + "<\/font>" + ": all weight values are rounded up")
+
+
+
+document.write("<br><br> <form><input type=\"button\" value=\"Back\" onClick=\"history.go(-1);return true;\"></form>")
+
+
+
+}
+
+
+
+</script>
+
+
+
+<h1>List the weights needed for a bar used and total weight of the lift</h1>
+<form name="weight_form" onsubmit="return calc_weights()" method="post" > 
+    <p> Bar Weight: 
+    
+    <label> <input type="radio" name=bar_select value="45" checked/> 45 </label>
+    <label> 
+        <input type="radio" name=bar_select value="35" /> 35 </label>
+
+</p>
+
+Total Weight to be lifted (including bar): <input type="text" name="weightEntry" value="" size="4" maxlength="4" />
+
+<br>
+
+<br>
+
+<input type="submit" value="Submit" >
+
+</form>
+
+
+
+</p>
+
+
+
+</body>
+
+</html>
+
+
+
+
+Reply
+Forward

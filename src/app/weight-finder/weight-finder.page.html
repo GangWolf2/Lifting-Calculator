@@ -1,0 +1,62 @@
+<ion-header>
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+              
+                <ion-button id ="button" start menuToggle>
+                    <ion-icon name = "menu"></ion-icon>
+                    <ion-title id="titletext"text-center>
+                            LiftAssist
+                    </ion-title>
+                </ion-button>
+                
+            </ion-col>
+        </ion-row>
+                    
+    </ion-grid>  
+</ion-header>
+
+<ion-content class= "content" padding>
+
+  <ion-item>
+    <ion-label text-center stacked>Enter Weight</ion-label>
+    <ion-input text-center type = "number" #userWeight></ion-input>
+  </ion-item>
+
+  <h2 text-center>Choose Bar Type </h2>
+  <h4 text-center>(Does Not Add to Weight)</h4>
+  <div class = "slide-group">
+    <!--
+      <ion-list>
+      <ion-list-header text-center>Choose Bar Type</ion-list-header>
+      <ion-item *ngFor= "let bar of bartype"> ngFor is causing list/slides not to appear, spelled array wrong you tard
+        <ion-label>{{bar.name}}</ion-label>
+        <img [src] = "bar.img">
+        <ion-checkbox name = "selectedBar" (change) = "setBarsFalse(bar)" [(ngModel)] = "bartype[bar]" [checked] = "bar.isChecked"></ion-checkbox>
+      </ion-item>
+    </ion-list>
+     -->
+      <ion-slides>
+        <ion-slide *ngFor = "let bar of bartype">
+          <ion-card id = "imgCard">
+            <ion-card-header>
+              <ion-card-title>{{bar.name}} ({{bar.weight}} lbs)</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+                <ion-img [src] = "bar.img"></ion-img>
+                <ion-checkbox (click) = "setBarsFalse(bar.number)" [(ngModel)] = "bar.isChecked"></ion-checkbox>
+            </ion-card-content>
+          </ion-card>
+           
+          
+        </ion-slide>
+      </ion-slides>   
+  </div>
+
+
+  <ion-segment>
+    <ion-segment-button (click) = "loadWeightFinderResultsPage(userWeight.value)">Calculate</ion-segment-button>
+  </ion-segment>
+  
+
+</ion-content>
