@@ -1,0 +1,67 @@
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { RouteReuseStrategy } from '@angular/router';
+
+import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
+import { SplashScreen } from '@ionic-native/splash-screen/ngx';
+import { StatusBar } from '@ionic-native/status-bar/ngx';
+
+import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule} from '@angular/forms';
+
+import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+
+import { TabsPage } from './tabs/tabs.page';
+import { TabsPageModule } from './tabs/tabs.module';
+import { TabsPageRoutingModule } from './tabs/tabs.router.module';
+
+import { MaxFindPage } from './max-find/max-find.page';
+import { MaxFindPageModule } from './max-find/max-find.module';
+
+import { MaxPercentagesPage} from './max-percentages/max-percentages.page';
+import { MaxPercentagesPageModule} from './max-percentages/max-percentages.module';
+
+import {MaxpercentagesResultsPage} from './maxpercentages-results/maxpercentages-results.page';
+import {MaxpercentagesResultsPageModule} from './maxpercentages-results/maxpercentages-results.module';
+
+import {WeightFinderPage} from './weight-finder/weight-finder.page';
+import {WeightFinderPageModule} from './weight-finder/weight-finder.module';
+
+import {WeightFinderResultsPage} from './weight-finder-results/weight-finder-results.page';
+import {WeightFinderResultsPageModule} from './weight-finder-results/weight-finder-results.module';
+
+
+@NgModule({
+  declarations: [AppComponent],
+  entryComponents: [
+    TabsPage,
+    MaxFindPage,
+    MaxPercentagesPage,
+    MaxpercentagesResultsPage,
+    WeightFinderPage,
+    WeightFinderResultsPage,
+  ],
+  imports: [
+    BrowserModule, 
+    IonicModule.forRoot(), 
+    AppRoutingModule, 
+    TabsPageModule,
+    TabsPageRoutingModule,
+    MaxFindPageModule,
+    MaxPercentagesPageModule,
+    MaxpercentagesResultsPageModule,
+    WeightFinderPageModule,
+    WeightFinderResultsPageModule,
+    ReactiveFormsModule,
+    FormsModule
+    ],
+
+  providers: [
+    StatusBar,
+    SplashScreen,
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+  ],
+  bootstrap: [AppComponent]
+})
+export class AppModule {}

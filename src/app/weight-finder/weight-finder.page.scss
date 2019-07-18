@@ -1,0 +1,26 @@
+#imgCard{
+    height: 350px;
+    width: 350px;
+}
+.button{
+    background-color: darkgreen;
+}
+.content{
+    --ion-background-color: white;
+}
+#button{
+    background-color: darkgreen !important;
+    color: white;
+    display: block;
+}
+
+#menu{
+    align-items: center;
+}
+#titletext{
+    color: #ffffff;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+#list-head{
+    text-align: center;
+}

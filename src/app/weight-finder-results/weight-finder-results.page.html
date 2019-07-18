@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-grid>
+      <ion-row>
+          <ion-col>
+            
+              <ion-button id ="button" start menuToggle>
+                  <ion-icon name = "menu"></ion-icon>
+                  <ion-title id="titletext"text-center>
+                          Bar Loader Results
+                  </ion-title>
+              </ion-button> 
+          </ion-col>
+      </ion-row>             
+  </ion-grid>  
+</ion-header>
+
+<ion-content class ="content" padding>
+
+  <h2 id ="header">On each side, place:</h2>
+  
+  <ion-list>
+    <ion-item *ngFor = "let w of weight">
+      <ion-label>{{w.load}}:</ion-label> <ion-label id = "amount">{{w.amount}}</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-footer>
+      <ion-toolbar>
+          <ion-segment-button id = "button" (click)=back()>Back</ion-segment-button>
+      </ion-toolbar>
+  </ion-footer>
+  
+
+</ion-content>

@@ -1,0 +1,56 @@
+<ion-header class = "header">
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+              <ion-button id ="button" start menuToggle>
+                    <ion-icon name = "menu"></ion-icon> <!--getting error cause by using name-->
+                    <ion-title id="titletext"text-center>
+                            Percentages
+                    </ion-title>
+                </ion-button>   
+            </ion-col>
+        </ion-row>            
+    </ion-grid>
+        
+</ion-header>
+
+
+<ion-content class = "content" padding>
+    <form [formGroup] = "maxperForm">
+        <ion-row align-items-center>
+                <ion-col align-self-center>
+                    <ion-item>
+                        <ion-label text-center stacked> Your One Rep Max </ion-label>
+                        <ion-input  text-center type= "number" #oneRepMax formControlName ="oneRep"></ion-input>
+                    </ion-item> <!--if name is deleted in line 6, error reroutes to line 28-->
+                </ion-col> <!--solution to line 28: must include name attr with ngModel-->
+            </ion-row>
+            <ion-button type="submit" id="calculate" (click) = set1RM(oneRepMax.value) >Calculate</ion-button>
+    </form>
+  
+    
+    
+
+    <div display = "none">
+        <ion-list text-center id ="results" display = "none">
+            <p id = "round" display = "none">Rounded amount: {{rounded}}</p> 
+            <ion-item *ngFor= "let percent of percentages" display = "inline">
+                <ion-label text-left> {{percent.value}}%:</ion-label><ion-label>{{percent.multiplier}}</ion-label>  
+                <ion-button (click) = "closestRoundUp(this.percent.multiplier)">Round</ion-button>
+            </ion-item>
+             
+        </ion-list>
+    </div>
+<!--
+<ion-row>
+        <ion-col text-center>
+          <button ion-button (click) = "loadPercentageResultsPage()">Calculate</button>
+        </ion-col>
+    </ion-row>
+-->
+    
+
+
+
+</ion-content>
+
