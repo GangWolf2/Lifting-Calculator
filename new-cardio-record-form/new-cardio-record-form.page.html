@@ -1,0 +1,56 @@
+<ion-header>
+    <ion-toolbar color ="primary">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>    
+        </ion-buttons>
+        <ion-title id = "titletext">New Cardio Record</ion-title>
+    </ion-toolbar>
+
+    
+                     
+</ion-header>
+<br>
+<ion-content>
+    <form [formGroup] = "records_form">
+
+        <ion-item>
+            <ion-label>Cardio Type: </ion-label>
+            <ion-select formControlName = "cardioType" aria-required="true">
+              <ion-select-option value="walking">Walking</ion-select-option>
+              <ion-select-option value="running">Running</ion-select-option>
+              <ion-select-option value="cycling">Cycling</ion-select-option>
+              <ion-select-option value="swimming">Swimming</ion-select-option>
+              <ion-select-option value="rowing">Rowing</ion-select-option>
+              <ion-select-option value="stairs">Stairs</ion-select-option>
+              <ion-select-option value="elliptical">Elliptical</ion-select-option>
+            </ion-select>    
+        </ion-item>
+        
+        <ion-item>
+            <ion-label>Distance: </ion-label>
+            <ion-input formControlName="distance" type="number"></ion-input>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>Final Time: </ion-label>
+          <ion-input formControlName="completionTime" type="time" aria-required="true"></ion-input>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>Date: </ion-label>
+          <ion-input formControlName="dateTime" type="date"></ion-input>
+        </ion-item>
+        
+    
+      </form>
+
+      <br>
+          <ion-segment display="inline">
+              <ion-button class ="formButton" display="inline" (click)="back()">Cancel</ion-button>
+              <ion-button class="formButton" display="inline">Finish</ion-button>
+          </ion-segment>
+     
+     
+     
+
+</ion-content>
