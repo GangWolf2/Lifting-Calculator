@@ -1,0 +1,58 @@
+<ion-header>
+    <ion-toolbar color ="primary">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>    
+        </ion-buttons>
+        <ion-title id = "titletext">New Lifting Record</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+    <form [formGroup]="records_form">
+      
+      <ion-item>
+        <ion-label>Section</ion-label>
+        <ion-select formControlName="liftArea">
+          <ion-select-option>Chest</ion-select-option>
+          <ion-select-option>Arms</ion-select-option>
+          <ion-select-option>Legs</ion-select-option>
+          <ion-select-option>Abs</ion-select-option>
+          <ion-select-option>Other</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Lift Name:</ion-label>
+        <ion-input formControlName="liftName" type="text" > </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label></ion-label>
+        <ion-input type="number" formControlName="weight">Weight: </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label></ion-label>
+        <ion-input type="number" formControlName="reps">Reps: </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label></ion-label>
+        <ion-input type="date" formControlName="date">Date: </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label></ion-label>
+        <ion-input type="time" formControlName="time">Time: </ion-input>
+      </ion-item>
+
+
+    </form>
+    <br>
+    <ion-segment>
+      <ion-button class = "formButton" display ="inline" (click)="back()">Cancel</ion-button>
+      <ion-button class = "formButton" display="inline">Finish</ion-button>
+    </ion-segment>
+
+  
+</ion-content>

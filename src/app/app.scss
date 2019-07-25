@@ -4,3 +4,29 @@
 // styles are for the entire app and not just one component. Additionally, this 
 // file can hold Sass mixins, functions, and placeholder classes to be imported 
 // and used throughout the application.
+.active{
+    --ion-text-color: var(--ion-color-success);
+    ion-icon{
+        color: var(--ion-color-success);
+    }
+}
+.active-parent{
+    font-weight: 500;
+}
+.subitem{
+    font-size: small;
+}
+#sidemenu{
+    background-color: var(--ion-sidemenu-color);
+}
+#menu{
+    color: white;
+}
+#menulabel{
+    color: white;
+}
+#titletext{
+    text-align: left;
+    color: #ffffff;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}

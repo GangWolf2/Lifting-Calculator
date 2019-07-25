@@ -11,6 +11,46 @@ import { TabsPage } from './tabs/tabs.page';
 })
 export class AppComponent { 
 
+  navigate = [
+    {
+      title: "Lifting",
+      icon: "body",
+      children: [
+        {
+          title: "One Rep Max",
+          url: "/tabs/tab1",
+          icon: "calculator"
+        },
+        {
+          title: "Bar Loader",
+          url: "/tabs/tab2",
+          icon: "calculator"
+        },
+        {
+          title: "Percentages",
+          url: "/tabs/tab3",
+          icon: "clipboard"
+        }
+      ]
+    },
+    {
+      title: "Personal Records",
+      icon: "bookmarks",
+      children: [
+        {
+          title: "Lifting Records",
+          url: "/personal-records/lifting-records",
+          icon: "body"
+        },
+        {
+          title: "Cardio Records",
+          url: "/personal-records/cardio-records",
+          icon: "walk"
+        }
+      ]
+    }
+  ]
+
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
@@ -25,4 +65,7 @@ export class AppComponent {
       this.splashScreen.hide();
     });
   }
+
+
+  
 }

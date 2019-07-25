@@ -22,14 +22,24 @@ import { MaxFindPageModule } from './max-find/max-find.module';
 import { MaxPercentagesPage} from './max-percentages/max-percentages.page';
 import { MaxPercentagesPageModule} from './max-percentages/max-percentages.module';
 
-import {MaxpercentagesResultsPage} from './maxpercentages-results/maxpercentages-results.page';
-import {MaxpercentagesResultsPageModule} from './maxpercentages-results/maxpercentages-results.module';
-
 import {WeightFinderPage} from './weight-finder/weight-finder.page';
 import {WeightFinderPageModule} from './weight-finder/weight-finder.module';
 
-import {WeightFinderResultsPage} from './weight-finder-results/weight-finder-results.page';
-import {WeightFinderResultsPageModule} from './weight-finder-results/weight-finder-results.module';
+import {PersonalRecordsPage} from './personal-records/personal-records.page';
+import {PersonalRecordsPageModule} from './personal-records/personal-records.module';
+import {PersonalRecordsPageRoutingModule} from './personal-records/personal-records.routing.module';
+
+import {LiftingRecordsPage} from './lifting-records/lifting-records.page';
+import {LiftingRecordsPageModule } from './lifting-records/lifting-records.module';
+
+import {CardioRecordsPage} from './cardio-records/cardio-records.page';
+import {CardioRecordsPageModule} from './cardio-records/cardio-records.module';
+
+import {NewCardioRecordFormPage} from './new-cardio-record-form/new-cardio-record-form.page';
+import {NewCardioRecordFormPageModule} from './new-cardio-record-form/new-cardio-record-form.module'
+
+import {NewLiftingRecordFormPage} from './new-lifting-record-form/new-lifting-record-form.page';
+import {NewLiftingRecordFormPageModule} from './new-lifting-record-form/new-lifting-record-form.module';
 
 
 @NgModule({
@@ -38,9 +48,12 @@ import {WeightFinderResultsPageModule} from './weight-finder-results/weight-find
     TabsPage,
     MaxFindPage,
     MaxPercentagesPage,
-    MaxpercentagesResultsPage,
     WeightFinderPage,
-    WeightFinderResultsPage,
+    PersonalRecordsPage,
+    LiftingRecordsPage,
+    NewLiftingRecordFormPage,
+    CardioRecordsPage,
+    NewCardioRecordFormPage
   ],
   imports: [
     BrowserModule, 
@@ -50,11 +63,15 @@ import {WeightFinderResultsPageModule} from './weight-finder-results/weight-find
     TabsPageRoutingModule,
     MaxFindPageModule,
     MaxPercentagesPageModule,
-    MaxpercentagesResultsPageModule,
+    PersonalRecordsPageModule,
+    PersonalRecordsPageRoutingModule,
+    LiftingRecordsPageModule,
+    NewLiftingRecordFormPageModule,
+    CardioRecordsPageModule,
+    NewCardioRecordFormPageModule,
     WeightFinderPageModule,
-    WeightFinderResultsPageModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
     ],
 
   providers: [

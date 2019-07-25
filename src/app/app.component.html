@@ -1,4 +1,51 @@
 <ion-app>
-  <ion-router-outlet>
-  </ion-router-outlet>
+  <ion-menu contentId = "content1">
+    <ion-header>
+      <ion-toolbar>
+        <ion-menu-button>
+            <ion-menu-button id="menu"></ion-menu-button>
+            <ion-title id="titletext">Menu</ion-title>
+        </ion-menu-button>
+      </ion-toolbar>
+    </ion-header>
+
+
+  <ion-content id="sidemenu">
+
+    <div *ngFor= "let n of navigate">
+
+  
+        <ion-menu-toggle *ngIf="n.url" auto-hide="true">
+        
+        <ion-item [routerLink]="n.url" routerDirection="root" routerLinkActive = "active">
+
+        <ion-icon [name]="n.icon" slot="start" id="menulabel"></ion-icon>
+        <ion-label id="titletext">{{n.title}}</ion-label>
+          
+        </ion-item>
+      
+        </ion-menu-toggle>
+
+      <ion-item button *ngIf="n.children?.length > 0" (click)="n.open = !n.open"
+        [class.active-parent] ="n.open" detail="false">
+        <ion-icon slot="start" [name]="n.icon" *ngIf="!n.open" id ="menulabel"></ion-icon>
+        <ion-icon slot="start" name="arrow-down" *ngIf="n.open" id="menulabel"></ion-icon>
+        <ion-label id="titletext">{{n.title}}</ion-label>
+      </ion-item>
+
+      <ion-list *ngIf="n.open">
+        <ion-menu-toggle>
+          <ion-item class="subitem" *ngFor ="let m of n.children" [routerLink] = "m.url" routerDirection = "root" routerLinkActive = "active">
+            <ion-icon [name]="m.icon" slot="start" id="menulabel"></ion-icon>
+            <ion-label id="titletext">{{m.title}}</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+      
+   
+  </div>
+  </ion-content>
+    
+  </ion-menu>
+  <ion-router-outlet id="content1"></ion-router-outlet>
 </ion-app>
