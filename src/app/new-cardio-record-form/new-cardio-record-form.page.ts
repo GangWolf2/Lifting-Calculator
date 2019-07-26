@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class NewCardioRecordFormPage implements OnInit {
 
+  records_form: FormGroup;
+
   cardio_records = [
     {
       cardioType: '', //walking,running, biking, stationary, swimming,...
@@ -22,16 +24,18 @@ export class NewCardioRecordFormPage implements OnInit {
  
 
   constructor(private form: FormBuilder, private route: Router) { 
+    
+    this.records_form = this.form.group({
+      cardioType: ['', Validators.compose([Validators.required])],
+      distance: ['', Validators.compose([Validators.maxLength(2)])],
+      denominator: ['', Validators.compose([Validators.maxLength(2), Validators.required])],
+      completionTime: new FormControl(''),
+      dateTime: new FormControl('')
+    });
 
   }
 
-  records_form = new FormGroup({
-    cardioType: new FormControl(''),
-    distance: new FormControl('',[Validators.compose([Validators.maxLength(2)])]),
-    denominator: new FormControl(''),
-    completionTime: new FormControl(''),
-    dateTime: new FormControl('')
-  });
+ 
   
 
   ngOnInit() {
