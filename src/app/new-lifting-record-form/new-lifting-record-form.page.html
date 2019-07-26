@@ -8,11 +8,12 @@
   </ion-header>
 
 <ion-content>
-    <form [formGroup]="records_form">
+    <form [formGroup]="records_form" (ngSubmit)="submitForm(records_form.value)">
       
       <ion-item>
         <ion-label>Section</ion-label>
         <ion-select formControlName="liftArea">
+          <ion-select-option> </ion-select-option>
           <ion-select-option>Chest</ion-select-option>
           <ion-select-option>Arms</ion-select-option>
           <ion-select-option>Legs</ion-select-option>
@@ -20,39 +21,36 @@
           <ion-select-option>Other</ion-select-option>
         </ion-select>
       </ion-item>
-
+      <br>
       <ion-item>
         <ion-label>Lift Name:</ion-label>
-        <ion-input formControlName="liftName" type="text" > </ion-input>
+        <ion-input class="userInput" formControlName="liftName" type="text" > </ion-input>
       </ion-item>
-
+      <br>
       <ion-item>
         <ion-label></ion-label>
-        <ion-input type="number" formControlName="weight">Weight: </ion-input>
+        <ion-input class="userInput" type="number" formControlName="weight">Weight: </ion-input>
       </ion-item>
-
+      <br>
       <ion-item>
         <ion-label></ion-label>
-        <ion-input type="number" formControlName="reps">Reps: </ion-input>
+        <ion-input class="userInput" type="number" formControlName="reps">Reps: </ion-input>
       </ion-item>
-
+      <br>
       <ion-item>
         <ion-label></ion-label>
-        <ion-input type="date" formControlName="date">Date: </ion-input>
+        <ion-input class="userInput" type="date" formControlName="date">Date: </ion-input>
       </ion-item>
-
+      <br>
       <ion-item>
         <ion-label></ion-label>
-        <ion-input type="time" formControlName="time">Time: </ion-input>
+        <ion-input class="userInput" type="time" formControlName="time">Time: </ion-input>
       </ion-item>
-
-
-    </form>
     <br>
     <ion-segment>
       <ion-button class = "formButton" display ="inline" (click)="back()">Cancel</ion-button>
-      <ion-button class = "formButton" display="inline">Finish</ion-button>
+      <ion-button class = "formButton" display="inline" type="submit">Finish</ion-button>
     </ion-segment>
-
+  </form>
   
 </ion-content>
