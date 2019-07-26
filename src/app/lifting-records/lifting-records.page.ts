@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Time } from '@angular/common';
 
 @Component({
   selector: 'app-lifting-records',
@@ -8,22 +9,38 @@ import { Router } from '@angular/router';
 })
 export class LiftingRecordsPage implements OnInit {
 
+  data: any;
+
   lifting_records = [
-    {
+    { 
+      liftArea: '',
       liftName: '',
-      weightLifted: '',
-      reps: '',
-      dateTime: '' //probably check if there is method that can get dateTime from system
+      weightLifted: 0,
+      reps: 0,
+      date: '', //builtin restrictions
+      time: ''
     }
   ]
 
-  constructor(private route: Router) { }
-
-  ngOnInit() {
+  constructor(private router: Router, private route: ActivatedRoute) { 
+    this.route.queryParams.subscribe(params => {
+      
+      //need to install cordova sqlite plugin to store and retrieve results
+      if(this.router.getCurrentNavigation().extras.state){
+        this.data = this.router.getCurrentNavigation().extras.state.submitted;
+      }
+      console.log("Data: " + this.data);
+      
+    })
   }
 
+  ngOnInit() {
+    this.lifting_records.push(this.data.area, this.data.name, this.data.weight, this.data.reps, this.data.date, this.data.time);
+  }
+
+
   newRecord(){
-    this.route.navigate(['/new-lifting-record-form']);
+    this.router.navigate(['/new-lifting-record-form']);
   }
 
 }

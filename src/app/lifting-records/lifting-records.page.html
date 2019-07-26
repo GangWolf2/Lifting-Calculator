@@ -7,12 +7,27 @@
     </ion-toolbar>
 
 <ion-content>
+    <ion-button (click)="newRecord()">
+       <ion-icon name="add-circle"></ion-icon>
+         New Record
+    </ion-button>
+
+<!--need to install cordova sqlite plugin to get values-->    
+    <ion-list display="inline">
+        <ion-list-header></ion-list-header>
+        <ion-card display="inline" *ngFor = "let l of lifting_records">
+            <ion-card-title>Lift: </ion-card-title>
+                <ion-label>Weight: </ion-label>
+                <ion-label>Reps: </ion-label>
+                <ion-label>Date: </ion-label>
+                <ion-label>Time: </ion-label>
+        </ion-card>
+    </ion-list>
+    
+   
 
     
 
-    <ion-button (click)="newRecord()">
-        <ion-icon name="add-circle"></ion-icon>
-        New Record
-    </ion-button>
+    
 
 </ion-content>
