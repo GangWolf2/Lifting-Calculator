@@ -1,0 +1,57 @@
+<ion-header>
+    <ion-toolbar color ="primary">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>    
+        </ion-buttons>
+        <ion-title id = "titletext">New Cardio Record</ion-title>
+    </ion-toolbar>
+
+    
+                     
+</ion-header>
+<br>
+<ion-content>
+    <ion-item>
+        <ion-label>Cardio Type: </ion-label>
+         <ion-select [(ngModel)]="newCRecord.cardioType">
+              <ion-select-option value="walking">Walking</ion-select-option>
+              <ion-select-option value="running">Running</ion-select-option>
+              <ion-select-option value="cycling">Cycling</ion-select-option>
+              <ion-select-option value="swimming">Swimming</ion-select-option>
+              <ion-select-option value="rowing">Rowing</ion-select-option>
+              <ion-select-option value="stairs">Stairs</ion-select-option>
+              <ion-select-option value="elliptical">Elliptical</ion-select-option>
+            </ion-select>    
+        </ion-item>
+        
+        <ion-item>
+            <ion-label>Distance: </ion-label>
+            <ion-input [(ngModel)] = "newCRecord.distance" type="number"></ion-input>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>Final Time: </ion-label>
+          <ion-input [(ngModel)] ="newCRecord.completion_time" type="time" ></ion-input>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>Date: </ion-label>
+          <ion-input [(ngModel)]="newCRecord.date" type="date"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Time: </ion-label>
+            <ion-input [(ngModel)]="newCRecord.time" type="time"></ion-input>
+        </ion-item>
+        
+
+      <br>
+          <ion-segment display="inline">
+              <ion-button display="inline" (click)="back()">Cancel</ion-button>
+              <ion-button display="inline" (click)="addCRecord()">Finish</ion-button>
+          </ion-segment>
+     
+     
+     
+
+</ion-content>

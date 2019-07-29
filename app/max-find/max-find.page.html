@@ -1,0 +1,33 @@
+<ion-header>
+    <ion-toolbar color = "primary">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title id ="titletext">1RM</ion-title>
+    </ion-toolbar>
+                   
+</ion-header>
+
+<ion-content class = "content" padding>
+  
+        <ion-list>
+            <ion-item>
+                 <ion-label text-center stacked > Enter Weight </ion-label>
+                 <ion-input text-center type= "number" #userWeight></ion-input>
+            </ion-item>
+              
+            <ion-item>
+                <ion-label text-center stacked > Enter Number of Reps </ion-label>
+                <ion-input text-center type= "number" #numReps ></ion-input>
+            </ion-item>      
+        </ion-list>
+        
+    <ion-button id = "button1" type = "submit" (click) = getOneRepMax(userWeight.value,numReps.value)> Calculate </ion-button>
+  
+<div class = "results" id = "results" display = "none">
+      <h2 class = "text"> Your 1RM </h2>
+      <p id= "oneRepResult">{{oneRepMax}}</p>
+      
+</div>
+
+</ion-content>

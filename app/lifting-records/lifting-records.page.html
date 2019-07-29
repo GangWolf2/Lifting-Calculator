@@ -1,0 +1,40 @@
+<ion-header>
+    <ion-toolbar color ="primary">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>    
+        </ion-buttons>
+        <ion-title id = "titletext">Lifting Records</ion-title>
+    </ion-toolbar>
+
+<ion-content>
+    <ion-button (click)="createRecord()">
+       <ion-icon name="add-circle"></ion-icon>
+         New Record
+    </ion-button>
+
+<!--need to install cordova sqlite plugin to get values--> 
+
+    <ion-list>
+        <ion-list-header>Lifting Records</ion-list-header>
+
+        <ion-item-sliding *ngFor="let records of LRECORDS">
+            <ion-item>
+                <ion-label>
+                    {{records.liftname}}
+                    <p>{{records.weight}}</p>
+                    <p>{{records.reps}}</p>
+                    <p>{{records.date}}</p>
+                    <p>{{records.time}}</p>
+                </ion-label>
+            </ion-item>
+        </ion-item-sliding>
+    </ion-list>
+  
+    
+   
+
+    
+
+    
+
+</ion-content>

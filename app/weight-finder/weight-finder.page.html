@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color ="primary"> 
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title id ="titletext">Bar Loader</ion-title> 
+  </ion-toolbar>                    
+</ion-header>
+
+<ion-content class= "content" padding>
+
+  <ion-list>
+      <ion-item>
+          <ion-label text-center stacked>Enter Weight</ion-label>
+          <ion-input text-center type = "number" #userWeight></ion-input>
+        </ion-item>
+      
+             <ion-slides>
+              <ion-slide *ngFor = "let bar of bartype">
+                <ion-card id = "imgCard">
+                  <ion-card-header>
+                    <ion-card-title>{{bar.name}}</ion-card-title>
+                  </ion-card-header>
+                  <ion-card-content>
+                      <ion-img [src] = "bar.image"></ion-img>
+                      <ion-button id = "button" (click) = setBar(bar.number)>Set Bar</ion-button>
+                  </ion-card-content>
+                  <ion-label>Currently Set: {{currentBarSet}}</ion-label>
+                </ion-card>
+          </ion-slide>
+        </ion-slides>   
+  </ion-list>
+
+    <ion-segment>
+        <ion-segment-button id = "button" (click) = loadResults(userWeight.value) >Calculate</ion-segment-button>
+    </ion-segment> 
+
+</ion-content>

@@ -1,0 +1,28 @@
+<ion-header>
+    <ion-toolbar color ="primary"> 
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title id ="titletext">Bar Loader</ion-title> 
+    </ion-toolbar>                    
+  </ion-header>
+  
+
+<ion-content class ="content" padding>
+
+  <h2 id ="header">On each side, place:</h2>
+  
+  <ion-list>
+    <ion-item *ngFor = "let w of weight">
+      <ion-label>{{w.load}}:</ion-label> <ion-label id = "amount">{{w.amount}}</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-footer>
+      <ion-toolbar>
+          <ion-segment-button id = "button" (click)=back()>Back</ion-segment-button>
+      </ion-toolbar>
+  </ion-footer>
+  
+
+</ion-content>
