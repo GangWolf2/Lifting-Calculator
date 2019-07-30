@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-cardio-records',
@@ -9,16 +11,12 @@ import { Router } from '@angular/router';
 })
 export class CardioRecordsPage implements OnInit {
 
-  constructor(private form: FormBuilder, private route: Router) { 
-    
-  }
+  constructor(private form: FormBuilder, private route: Router) {}
 
-  newRecord(){
+  
+  createRecord(){
     this.route.navigate(['./new-cardio-record-form']);
-  }
-
-  
-  
+  }  
 
   ngOnInit() {
   }

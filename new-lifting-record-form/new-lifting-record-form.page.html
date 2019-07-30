@@ -8,11 +8,10 @@
   </ion-header>
 
 <ion-content>
-    <form [formGroup]="records_form">
-      
       <ion-item>
         <ion-label>Section</ion-label>
-        <ion-select formControlName="liftArea">
+        <ion-select [(ngModel)] = "newLRecord.area">
+          <ion-select-option> </ion-select-option>
           <ion-select-option>Chest</ion-select-option>
           <ion-select-option>Arms</ion-select-option>
           <ion-select-option>Legs</ion-select-option>
@@ -20,39 +19,32 @@
           <ion-select-option>Other</ion-select-option>
         </ion-select>
       </ion-item>
-
+      <br>
       <ion-item>
         <ion-label>Lift Name:</ion-label>
-        <ion-input formControlName="liftName" type="text" > </ion-input>
+        <ion-input [(ngModel)] = "newLRecord.liftname" class="userInput" type="text" > </ion-input>
       </ion-item>
-
+      <br>
       <ion-item>
-        <ion-label></ion-label>
-        <ion-input type="number" formControlName="weight">Weight: </ion-input>
+        
+        <ion-input [(ngModel)]="newLRecord.weight" class="userInput" type="number">Weight: </ion-input>
       </ion-item>
-
+      <br>
       <ion-item>
-        <ion-label></ion-label>
-        <ion-input type="number" formControlName="reps">Reps: </ion-input>
+        <ion-input [(ngModel)]="newLRecord.reps" class="userInput" type="number">Reps: </ion-input>
       </ion-item>
-
+      <br>
       <ion-item>
-        <ion-label></ion-label>
-        <ion-input type="date" formControlName="date">Date: </ion-input>
+        <ion-input [(ngModel)]="newLRecord.date" class="userInput" type="date">Date: </ion-input>
       </ion-item>
-
+      <br>
       <ion-item>
-        <ion-label></ion-label>
-        <ion-input type="time" formControlName="time">Time: </ion-input>
+        <ion-input [(ngModel)]="newLRecord.time" class="userInput" type="time">Time: </ion-input>
       </ion-item>
-
-
-    </form>
     <br>
     <ion-segment>
-      <ion-button class = "formButton" display ="inline" (click)="back()">Cancel</ion-button>
-      <ion-button class = "formButton" display="inline">Finish</ion-button>
+      <ion-button display ="inline" (click)="back()">Cancel</ion-button>
+      <ion-button display="inline" type="submit" (click)="addRecord()">Finish</ion-button>
     </ion-segment>
-
   
 </ion-content>
