@@ -31,7 +31,7 @@ export class NewCardioRecordFormPage implements OnInit {
       this.newCRecord = <CRecords>{};
       this.showToast('Record Added')
       this.loadCRecords();
-      this.route.navigate(['./new-cardio-record-form'])
+      this.route.navigate(['./cardio-records'])
     })
   }
 

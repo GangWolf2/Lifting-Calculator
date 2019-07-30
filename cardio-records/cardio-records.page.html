@@ -8,11 +8,46 @@
                     
 </ion-header>
   
-<ion-content>
+<ion-content class="content">
 
-    <ion-button (click)="createRecord()">
-      <ion-icon name ="add-circle" ></ion-icon>
-      New Record
-    </ion-button>
-
-</ion-content>
+        <!--to separate lifts by targeted area, just use an *ngIf and look at r.area-->
+        <ion-list class="record-list">
+            <ion-list-header>
+                <ion-label>Records</ion-label>
+            </ion-list-header>
+    
+            <ion-item-sliding *ngFor="let c of records" id="sliding-item">
+                <ion-item color="white" id="sliding-item">
+                    <ion-label>
+                        <h3>{{c.cardioType}}</h3>
+                    <ion-text color="secondary">
+                        <p>Distance: {{c.distance}}</p>
+                    </ion-text>
+                    <ion-text color="secondary">
+                        <p>Total Time: {{c.completion_time}}</p>
+                    </ion-text>
+                    <ion-text color="secondary">
+                        <p>Completed: {{c.date}}, {{c.time}}</p>
+                    </ion-text>
+                    </ion-label>
+                </ion-item>
+                <ion-item-options side="end">
+                    <ion-item-option color="secondary" (click)="updateRecord(r)">Update</ion-item-option>
+                    <ion-item-option color="danger" (click)="deleteRecord(r)">Delete</ion-item-option>
+                </ion-item-options>
+            </ion-item-sliding>
+           
+        </ion-list>
+    
+    <!--need to install cordova sqlite plugin to get values--> 
+    
+    </ion-content>
+     
+      
+    <ion-footer>
+        <ion-fab horizontal="end" vertical="bottom" slot="fixed"> 
+            <ion-fab-button (click)="createRecord()">
+                <ion-icon name="add-circle"></ion-icon>
+            </ion-fab-button>
+        </ion-fab>        
+    </ion-footer>

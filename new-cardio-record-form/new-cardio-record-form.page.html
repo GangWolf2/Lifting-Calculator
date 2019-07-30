@@ -14,13 +14,13 @@
     <ion-item>
         <ion-label>Cardio Type: </ion-label>
          <ion-select [(ngModel)]="newCRecord.cardioType">
-              <ion-select-option value="walking">Walking</ion-select-option>
-              <ion-select-option value="running">Running</ion-select-option>
-              <ion-select-option value="cycling">Cycling</ion-select-option>
-              <ion-select-option value="swimming">Swimming</ion-select-option>
-              <ion-select-option value="rowing">Rowing</ion-select-option>
-              <ion-select-option value="stairs">Stairs</ion-select-option>
-              <ion-select-option value="elliptical">Elliptical</ion-select-option>
+              <ion-select-option value="Walking">Walking</ion-select-option>
+              <ion-select-option value="Running">Running</ion-select-option>
+              <ion-select-option value="Cycling">Cycling</ion-select-option>
+              <ion-select-option value="Swimming">Swimming</ion-select-option>
+              <ion-select-option value="Rowing">Rowing</ion-select-option>
+              <ion-select-option value="Stairs">Stairs</ion-select-option>
+              <ion-select-option value="Elliptical">Elliptical</ion-select-option>
             </ion-select>    
         </ion-item>
         
@@ -31,7 +31,7 @@
     
         <ion-item>
           <ion-label>Final Time: </ion-label>
-          <ion-input [(ngModel)] ="newCRecord.completion_time" type="time" ></ion-input>
+          <ion-input [(ngModel)] ="newCRecord.completion_time" type="time" ></ion-datetime>
         </ion-item>
     
         <ion-item>
