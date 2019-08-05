@@ -1,0 +1,35 @@
+<ion-header>
+    <ion-toolbar color ="primary">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>    
+        </ion-buttons>
+        <ion-title id = "titletext">Update Lifting Record</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+  <form [formGroup]="updateForm">
+      <ion-item>
+          <ion-label>Lift Name:</ion-label>
+          <ion-input formControlName="liftname" [(ngModel)] ="record.liftname" class="userInput" type="text" placeholder="Current: {{liftname}}"> </ion-input>
+        </ion-item>
+        <br>
+        <ion-item>
+          <ion-input formControlName="weight" [(ngModel)]="record.weight" class="userInput" type="number" placeholder="Current: {{weight}}">Weight: </ion-input>
+        </ion-item>
+        <br>
+        <ion-item>
+          <ion-input formControlName="reps" [(ngModel)]="record.reps" class="userInput" type="number" placeholder="Current: {{reps}}">Reps/Time: </ion-input>
+        </ion-item>
+        <br>
+        <ion-item>
+          <ion-input formControlName="date" [(ngModel)]="record.date" class="userInput" type="date" placeholder="Current: {{date}}">Date: </ion-input>
+        </ion-item>
+      <br>
+      <ion-segment>
+        <ion-button display ="inline" (click)="back()">Cancel</ion-button> <!--need to figure our what to put in updateRecord-->
+        <ion-button display="inline" [disabled]="!updateForm.valid"(click)="updateRecord()">Update</ion-button>
+      </ion-segment>
+  </form>
+
+</ion-content>
